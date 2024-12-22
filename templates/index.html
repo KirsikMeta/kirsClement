@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supabase Data</title>
+    <!-- Подключение Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Данные из Supabase</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <!-- Замените 'column1', 'column2', ... на названия ваших столбцов -->
+                    <th>Имя (ИРЛ)</th>
+                    <th>Игровое Имя</th>
+                    <th>Статик</th>
+                    <!-- Добавьте дополнительные столбцы по мере необходимости -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data %}
+                    <tr>
+                        <td>{{ item.real_name }}</td>
+                        <td>{{ item.game_name }}</td>
+                        <td>{{ item.static }}</td>
+                        <!-- Добавьте дополнительные ячейки по мере необходимости -->
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Подключение Bootstrap JS и jQuery (необязательно, если не используете JS компоненты) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
